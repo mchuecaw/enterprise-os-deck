@@ -115,7 +115,7 @@ section's `data-speaker-notes`.
 
 **ACT VI — LIVE DEMO** *(added section — Spanish, audience-facing)*
 20. `20 Demo` — Centered hero: eyebrow "DEMO EN VIVO", headline **"SEM con agentes, en directo."**, sub "Una campaña de Google Ads real, sobre una web sin preparar, montada por un agente mientras la audiencia mira.", and 3 chips: `web real · umbratech.es`, `sin preparación`, `un comando`. Scene: cyan ambient.
-21. `21 Pasos` — Eyebrow "EL AGENTE, PASO A PASO" + title "Cinco pasos, en segundos." Five numbered rows (01 Lee la web · 02 Investiga keywords y competencia · 03 Escribe los anuncios · 04 Estructura la campaña · 05 Exporta el CSV), each with a mono sub-caption. **Discreet link bottom-right:** "VER GUÍA · CÓMO SE HACE →" → opens `guia-sem-como-se-hace.html` in a new tab. Styled to match telemetry (mono 24px, `rgba(255,255,255,0.34)`, cyan arrow, hover → cyan).
+21. `21 Pasos` — Eyebrow "EL AGENTE, PASO A PASO" + title "Cinco pasos, en segundos." Five numbered rows (01 Lee la web · 02 Investiga keywords y competencia · 03 Escribe los anuncios · 04 Estructura la campaña · 05 Exporta el CSV), each with a mono sub-caption. **Discreet link bottom-right:** "VER GUÍA · CÓMO SE HACE →" → opens `guide-how-its-done.html` in a new tab. Styled to match telemetry (mono 24px, `rgba(255,255,255,0.34)`, cyan arrow, hover → cyan).
 22. `22 Outcome` — Eyebrow "OUTCOME · EL ROI ES TIEMPO". "≈ 18 h → **320×** más rápido" with the **320 number animating up (count-up)** on slide-enter (`#demo-bignum`, ~1.7s ease-out cubic). Sub "≈ 18 h hombre → ≈ 3,4 min reales" and kicker "El ROI no se mide en dinero. **Se mide en tiempo.**" Scene: blue ambient.
 
 ## Interactions & Behavior
@@ -148,7 +148,7 @@ section's `data-speaker-notes`.
   background). Cropped from a user-supplied brand lockup (PNG) and keyed to transparency;
   used on slide 15. Orange-glitch "TwinVerse" lettering. If your app has the original
   vector/brand asset, prefer that. Brand accent in the logo is orange `~#EA3C00`.
-- `guia-sem-como-se-hace.html` — the standalone **how-to guide** the slide-21 link points
+- `guide-how-its-done.html` — the standalone **how-to guide** the slide-21 link points
   to. Different visual system (orange `#EA3C00` accent, Space Grotesk + Inter + JetBrains
   Mono). Self-contained; treat as a separate page.
 - `reference_sem-demo-standalone.html` — the original standalone 3-panel SEM demo this
@@ -163,10 +163,10 @@ section's `data-speaker-notes`.
 - `deck-stage.js` — slide-shell web component: scaling, keyboard nav, thumbnails, speaker
   notes, print (prototype scaffolding; replace with your slide controller).
 - `assets/twinverse-wordmark.png` — TwinVerse logo (slide 15).
-- `guia-sem-como-se-hace.html` — linked how-to guide (slide 21).
+- `guide-how-its-done.html` — linked how-to guide (slide 21).
 - `reference_sem-demo-standalone.html` — original SEM demo reference.
 
 ## How to run the prototype
 Open `Enterprise Operating System.dc.html` in a browser (it loads `support.js` and
 `deck-stage.js` from the same folder). Use arrow keys to navigate. The slide-21 "VER GUÍA"
-link opens `guia-sem-como-se-hace.html`.
+link opens `guide-how-its-done.html`.

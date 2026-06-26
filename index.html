@@ -45,8 +45,8 @@
 
 <script>
 (function(){
-  // Presentación limpia + deep-link por hash (#23 -> esa slide). Útil para
-  // compartir una slide concreta; no altera la navegación normal.
+  // Clean presentation + hash deep-link (#23 -> that slide). Handy for
+  // sharing a specific slide; does not alter normal navigation.
   function ds(){ return document.querySelector('deck-stage'); }
   function killRail(){ var d=ds(); if(d){ d.setAttribute('no-rail',''); return true; } return false; }
   function gotoFromHash(){
@@ -565,16 +565,16 @@
   </section>
 
   <!-- ============ SLIDE 20 — DEMO · EL EJERCICIO ============ -->
-  <section data-label="Demo" data-screen-label="20" data-speaker-notes="Cambio de marcha: de la visión a la prueba. Vamos a montar, en directo, una campaña de Google Ads real sobre una web sin preparar. Sin trucos. Un comando." style="background:#050505;color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;display:block;">
+  <section data-label="Demo" data-screen-label="20" data-speaker-notes="A change of gear: from vision to proof. We're going to build, live, a real Google Ads campaign on an unprepared website. No tricks. One command." style="background:#050505;color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;display:block;">
     <canvas class="scene" data-scene="casefiles" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:1;"></canvas>
     <div style="position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 220px;">
-      <div class="type-line" data-delay="120" style="opacity:1;font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:0.46em;color:#74d4cb;text-transform:uppercase;margin-bottom:44px;">Demo en vivo</div>
-      <div class="reveal" data-delay="500" style="opacity:1;font-weight:300;font-size:88px;line-height:1.08;letter-spacing:-0.02em;">SEM con agentes,<br>en directo.</div>
-      <div class="reveal" data-delay="2200" style="opacity:1;font-weight:300;font-size:38px;margin-top:46px;color:rgba(255,255,255,0.5);max-width:1280px;line-height:1.4;">Una campaña de Google Ads real, sobre una web sin preparar, montada por un agente mientras la audiencia mira.</div>
+      <div class="type-line" data-delay="120" style="opacity:1;font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:0.46em;color:#74d4cb;text-transform:uppercase;margin-bottom:44px;">Live demo</div>
+      <div class="reveal" data-delay="500" style="opacity:1;font-weight:300;font-size:88px;line-height:1.08;letter-spacing:-0.02em;">SEM with agents,<br>live.</div>
+      <div class="reveal" data-delay="2200" style="opacity:1;font-weight:300;font-size:38px;margin-top:46px;color:rgba(255,255,255,0.5);max-width:1280px;line-height:1.4;">A real Google Ads campaign, on an unprepared website, built by an agent while the audience watches.</div>
       <div class="reveal" data-delay="3000" style="opacity:1;display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:54px;">
-        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.12);border-radius:3px;padding:10px 20px;display:flex;align-items:center;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:#74d4cb;"></span>web real · umbratech.es</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.12);border-radius:3px;padding:10px 20px;display:flex;align-items:center;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:#74d4cb;"></span>sin preparación</span>
-        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.12);border-radius:3px;padding:10px 20px;display:flex;align-items:center;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:#74d4cb;"></span>un comando</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.12);border-radius:3px;padding:10px 20px;display:flex;align-items:center;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:#74d4cb;"></span>real website · umbratech.es</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.12);border-radius:3px;padding:10px 20px;display:flex;align-items:center;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:#74d4cb;"></span>no prep</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.02em;color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.12);border-radius:3px;padding:10px 20px;display:flex;align-items:center;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:#74d4cb;"></span>one command</span>
       </div>
     </div>
     <div style="position:absolute;inset:0;pointer-events:none;z-index:5;">
@@ -588,40 +588,40 @@
   </section>
 
   <!-- ============ SLIDE 21 — DEMO · LOS 5 PASOS ============ -->
-  <section data-label="Pasos" data-screen-label="21" data-speaker-notes="El agente recorre cinco pasos en segundos: lee la web, investiga keywords y competencia, escribe los anuncios, estructura la campaña y exporta el CSV listo para Google Ads Editor." style="background:#050505;color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;display:block;">
+  <section data-label="Steps" data-screen-label="21" data-speaker-notes="The agent runs through five steps in seconds: it reads the website, researches keywords and competitors, writes the ads, structures the campaign and exports the CSV ready for Google Ads Editor." style="background:#050505;color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;display:block;">
     <canvas class="scene" data-scene="casefiles" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:1;"></canvas>
     <div style="position:absolute;left:96px;top:150px;z-index:3;">
-      <div class="reveal" data-delay="160" style="opacity:1;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.4em;color:#74d4cb;text-transform:uppercase;">El agente, paso a paso</div>
-      <div class="reveal" data-delay="320" style="opacity:1;font-weight:300;font-size:58px;letter-spacing:-0.01em;margin-top:18px;">Cinco pasos, en segundos.</div>
+      <div class="reveal" data-delay="160" style="opacity:1;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.4em;color:#74d4cb;text-transform:uppercase;">The agent, step by step</div>
+      <div class="reveal" data-delay="320" style="opacity:1;font-weight:300;font-size:58px;letter-spacing:-0.01em;margin-top:18px;">Five steps, in seconds.</div>
     </div>
     <div style="position:absolute;left:96px;right:96px;top:392px;z-index:3;display:flex;flex-direction:column;gap:24px;max-width:1500px;">
       <div class="reveal" data-delay="500" style="opacity:1;display:flex;align-items:baseline;gap:36px;border-top:1px solid rgba(255,255,255,0.09);padding-top:22px;">
         <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(122,212,203,0.7);width:64px;flex:none;">01</div>
-        <div style="font-weight:300;font-size:40px;width:600px;flex:none;">Lee la web</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">qué vende y a quién</div>
+        <div style="font-weight:300;font-size:40px;width:600px;flex:none;">Reads the website</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">what it sells and to whom</div>
       </div>
       <div class="reveal" data-delay="700" style="opacity:1;display:flex;align-items:baseline;gap:36px;border-top:1px solid rgba(255,255,255,0.09);padding-top:22px;">
         <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(122,212,203,0.7);width:64px;flex:none;">02</div>
-        <div style="font-weight:300;font-size:40px;width:600px;flex:none;">Investiga keywords y competencia</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">intención y competidores</div>
+        <div style="font-weight:300;font-size:40px;width:600px;flex:none;">Researches keywords &amp; competitors</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">intent and competitors</div>
       </div>
       <div class="reveal" data-delay="900" style="opacity:1;display:flex;align-items:baseline;gap:36px;border-top:1px solid rgba(255,255,255,0.09);padding-top:22px;">
         <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(122,212,203,0.7);width:64px;flex:none;">03</div>
-        <div style="font-weight:300;font-size:40px;width:600px;flex:none;">Escribe los anuncios</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">titulares y descripciones</div>
+        <div style="font-weight:300;font-size:40px;width:600px;flex:none;">Writes the ads</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">headlines and descriptions</div>
       </div>
       <div class="reveal" data-delay="1100" style="opacity:1;display:flex;align-items:baseline;gap:36px;border-top:1px solid rgba(255,255,255,0.09);padding-top:22px;">
         <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(122,212,203,0.7);width:64px;flex:none;">04</div>
-        <div style="font-weight:300;font-size:40px;width:600px;flex:none;">Estructura la campaña</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">grupos, concordancias, negativas</div>
+        <div style="font-weight:300;font-size:40px;width:600px;flex:none;">Structures the campaign</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">ad groups, match types, negatives</div>
       </div>
       <div class="reveal" data-delay="1300" style="opacity:1;display:flex;align-items:baseline;gap:36px;border-top:1px solid rgba(255,255,255,0.09);padding-top:22px;">
         <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(122,212,203,0.7);width:64px;flex:none;">05</div>
-        <div style="font-weight:300;font-size:40px;width:600px;flex:none;">Exporta el CSV</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">listo para Google Ads Editor</div>
+        <div style="font-weight:300;font-size:40px;width:600px;flex:none;">Exports the CSV</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">ready for Google Ads Editor</div>
       </div>
     </div>
-    <a href="guia-sem-como-se-hace.html" target="_blank" rel="noopener" style="position:absolute;right:66px;bottom:50px;z-index:6;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.14em;color:rgba(255,255,255,0.34);text-decoration:none;display:flex;align-items:center;gap:13px;transition:color 0.25s ease;" style-hover="color:rgba(122,212,203,0.9);">VER GUÍA · CÓMO SE HACE <span style="color:rgba(122,212,203,0.7);">→</span></a>
+    <a href="guide-how-its-done.html" target="_blank" rel="noopener" style="position:absolute;right:66px;bottom:50px;z-index:6;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.14em;color:rgba(255,255,255,0.34);text-decoration:none;display:flex;align-items:center;gap:13px;transition:color 0.25s ease;" style-hover="color:rgba(122,212,203,0.9);">VIEW GUIDE · HOW IT'S DONE <span style="color:rgba(122,212,203,0.7);">→</span></a>
     <div style="position:absolute;inset:0;pointer-events:none;z-index:5;">
       <div style="position:absolute;top:38px;left:38px;width:26px;height:26px;border-left:1px solid rgba(255,255,255,0.13);border-top:1px solid rgba(255,255,255,0.13);"></div>
       <div style="position:absolute;top:38px;right:38px;width:26px;height:26px;border-right:1px solid rgba(255,255,255,0.13);border-top:1px solid rgba(255,255,255,0.13);"></div>
@@ -633,24 +633,24 @@
   </section>
 
   <!-- ============ SLIDE 22 — DEMO · OUTCOME ============ -->
-  <section data-label="Outcome" data-screen-label="22" data-speaker-notes="El resultado. Lo que tomaría unas 18 horas hombre —cerca de tres días— sucede en unos 3,4 minutos reales. Unas 320 veces más rápido. El ROI no se mide en dinero, se mide en tiempo." style="background:#050505;color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;display:block;">
+  <section data-label="Outcome" data-screen-label="22" data-speaker-notes="The result. What would take about 18 man-hours —nearly three days— happens in roughly 3.4 real minutes. About 320 times faster. ROI isn't measured in money, it's measured in time." style="background:#050505;color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;display:block;">
     <canvas class="scene" data-scene="timekpi" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:1;"></canvas>
     <div style="position:absolute;left:130px;right:130px;top:50%;transform:translateY(-50%);z-index:3;">
-      <div class="reveal" data-delay="160" style="opacity:1;font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:0.46em;color:#74d4cb;text-transform:uppercase;">Outcome · el ROI es tiempo</div>
+      <div class="reveal" data-delay="160" style="opacity:1;font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:0.46em;color:#74d4cb;text-transform:uppercase;">Outcome · the ROI is time</div>
       <div style="display:flex;align-items:flex-end;gap:64px;flex-wrap:wrap;margin-top:54px;">
         <div class="reveal" data-delay="500" style="opacity:1;">
           <div style="font-weight:300;font-size:96px;color:rgba(255,255,255,0.32);line-height:1;">≈ 18 h</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);margin-top:14px;">horas hombre · ~3 días</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);margin-top:14px;">man-hours · ~3 days</div>
         </div>
         <div class="reveal" data-delay="650" style="opacity:1;font-size:72px;color:rgba(255,255,255,0.3);padding-bottom:24px;">→</div>
         <div class="reveal" data-delay="800" style="opacity:1;display:flex;align-items:flex-end;gap:18px;">
           <span id="demo-bignum" style="font-family:'JetBrains Mono',monospace;font-weight:500;font-variant-numeric:tabular-nums;font-size:240px;line-height:0.82;color:#74d4cb;letter-spacing:-0.01em;">0</span>
           <span style="font-size:96px;color:#74d4cb;padding-bottom:18px;">&times;</span>
-          <span style="font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(255,255,255,0.4);padding-bottom:30px;">más rápido</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(255,255,255,0.4);padding-bottom:30px;">faster</span>
         </div>
       </div>
-      <div class="reveal" data-delay="1400" style="opacity:1;font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(255,255,255,0.4);margin-top:40px;">≈ 18 h hombre&nbsp;&nbsp;&rarr;&nbsp;&nbsp;<span style="color:#F4F6F8;">≈ 3,4 min reales</span></div>
-      <div class="reveal" data-delay="1800" style="opacity:1;font-weight:300;font-size:54px;letter-spacing:-0.01em;margin-top:48px;">El ROI no se mide en dinero. <span style="color:#74d4cb;">Se mide en tiempo.</span></div>
+      <div class="reveal" data-delay="1400" style="opacity:1;font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(255,255,255,0.4);margin-top:40px;">≈ 18 man-hours&nbsp;&nbsp;&rarr;&nbsp;&nbsp;<span style="color:#F4F6F8;">≈ 3.4 real minutes</span></div>
+      <div class="reveal" data-delay="1800" style="opacity:1;font-weight:300;font-size:54px;letter-spacing:-0.01em;margin-top:48px;">ROI isn't measured in money. <span style="color:#74d4cb;">It's measured in time.</span></div>
     </div>
     <div style="position:absolute;inset:0;pointer-events:none;z-index:5;">
       <div style="position:absolute;top:38px;left:38px;width:26px;height:26px;border-left:1px solid rgba(255,255,255,0.13);border-top:1px solid rgba(255,255,255,0.13);"></div>
@@ -663,9 +663,9 @@
   </section>
 
 
-    <!-- ============ SLIDE 23 — GUÍA · CÓMO SE HACE (añadida) ============ -->
-    <section data-label="Guía" data-speaker-notes="Guía completa: cómo se monta la campaña SEM con un agente, paso a paso. Documento de referencia embebido como página final del deck." style="background:#050505;color:#F4F6F8;overflow:hidden;display:block;">
-      <iframe src="guia-sem-como-se-hace.html" title="Guía — Cómo se hace, paso a paso" loading="eager" style="position:absolute;inset:0;width:1920px;height:1080px;border:0;background:#050505;"></iframe>
+    <!-- ============ SLIDE 23 — GUIDE · HOW IT'S DONE (added) ============ -->
+    <section data-label="Guide" data-speaker-notes="Full guide: how the SEM campaign is built with an agent, step by step. Reference document embedded as the deck's final page." style="background:#050505;color:#F4F6F8;overflow:hidden;display:block;">
+      <iframe src="guide-how-its-done.html" title="Guide — How it's done, step by step" loading="eager" style="position:absolute;inset:0;width:1920px;height:1080px;border:0;background:#050505;"></iframe>
     </section>
 </x-import>
 </x-dc>
