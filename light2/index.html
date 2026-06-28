@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; box-sizing: border-box; }
+  html, body { background: #08090B; }
+  #demo-start:hover { background: rgba(122,212,203,0.18) !important; }
+  #demo-stop:hover  { background: rgba(255,255,255,0.10) !important; }
+  #demo-reset:hover { border-color: rgba(255,255,255,0.34) !important; }
+  #demo-start:active, #demo-stop:active, #demo-reset:active { transform: translateY(1px); }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#08090B"></rect>
+    <radialGradient id="eos-g" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#cdeee7" stop-opacity="0.9"></stop>
+      <stop offset="30%" stop-color="#74d4cb" stop-opacity="0.45"></stop>
+      <stop offset="70%" stop-color="#74d4cb" stop-opacity="0.08"></stop>
+      <stop offset="100%" stop-color="#74d4cb" stop-opacity="0"></stop>
+    </radialGradient>
+    <circle cx="600" cy="360" r="300" fill="url(#eos-g)"></circle>
+    <circle cx="600" cy="360" r="44" fill="#cdeee7"></circle>
+    <ellipse cx="600" cy="360" rx="230" ry="92" fill="none" stroke="#74d4cb" stroke-width="3" stroke-opacity="0.6"></ellipse>
+    <text x="600" y="660" font-family="'JetBrains Mono', monospace" font-size="58" letter-spacing="14" fill="#F4F6F8" text-anchor="middle">OS</text>
+  </svg>
+</template>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <!-- 01 — TITLE -->
+  <section data-label="Title" data-screen-label="01" data-speaker-notes="Una frase. Un sistema operativo para tu startup: una inteligencia que hace el trabajo. Sin prisa." style="background:var(--bg,#08090B);color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;padding:128px 120px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.4em;color:var(--accent,#74d4cb);text-transform:uppercase;">Agents at work</div>
+      <h1 style="font-weight:300;font-size:104px;line-height:1.04;letter-spacing:-0.02em;margin-top:40px;">An operating system<br>for your startup</h1>
+      <div style="font-weight:300;font-size:38px;color:rgba(255,255,255,0.5);margin-top:44px;max-width:1100px;">One intelligence that runs the work &mdash; across every team.</div>
+    </div>
+    <div style="position:absolute;left:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.28em;color:rgba(255,255,255,0.24);">MAZINGEROS</div>
+    <div style="position:absolute;right:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;color:rgba(255,255,255,0.24);">01 / 09</div>
+  </section>
+
+  <!-- 02 — PREMISE -->
+  <section data-label="Premise" data-screen-label="02" data-speaker-notes="El punto de partida. Tu startup ya funciona con decenas de procesos repetitivos, casi todos a mano." style="background:var(--bg,#08090B);color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;padding:128px 120px;display:flex;flex-direction:column;justify-content:center;max-width:1500px;">
+      <div style="font-weight:300;font-size:76px;line-height:1.1;letter-spacing:-0.015em;">Your startup already runs on dozens of repetitive processes.</div>
+      <div style="font-weight:300;font-size:40px;line-height:1.35;color:rgba(255,255,255,0.5);margin-top:36px;max-width:1200px;">Most of them are still done by hand. The agent turns them into work that runs itself.</div>
+    </div>
+    <div style="position:absolute;left:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.28em;color:rgba(255,255,255,0.24);">THE IDEA</div>
+    <div style="position:absolute;right:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;color:rgba(255,255,255,0.24);">02 / 09</div>
+  </section>
+
+  <!-- 03 — WHAT IT IS -->
+  <section data-label="What it is" data-screen-label="03" data-speaker-notes="Que es: una capa que coge una peticion y hace el trabajo de principio a fin. Supervisada, no un chatbot." style="background:var(--bg,#08090B);color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;padding:128px 120px;display:flex;flex-direction:column;justify-content:center;max-width:1560px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.34em;color:var(--accent,#74d4cb);text-transform:uppercase;">One layer, many hands</div>
+      <div style="font-weight:300;font-size:76px;line-height:1.08;letter-spacing:-0.015em;margin-top:28px;">One agent.<br>Thousands of tasks.</div>
+      <div style="font-weight:300;font-size:38px;line-height:1.4;color:rgba(255,255,255,0.5);margin-top:36px;max-width:1240px;">A single layer sits above your tools and your team. It takes a request and does the work end to end &mdash; supervised, not a chatbot.</div>
+    </div>
+    <div style="position:absolute;left:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.28em;color:rgba(255,255,255,0.24);">THE IDEA</div>
+    <div style="position:absolute;right:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;color:rgba(255,255,255,0.24);">03 / 09</div>
+  </section>
+
+  <!-- 04 — CONCRETE EXAMPLES -->
+  <section data-label="Examples" data-screen-label="04" data-speaker-notes="El corazon. Ejemplos concretos y cercanos: marketing digital, contenidos, comercial, finanzas. Trabajo real, no informes." style="background:var(--bg,#08090B);color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;padding:120px 120px;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.34em;color:var(--accent,#74d4cb);text-transform:uppercase;">Where it works for you</div>
+      <div style="font-weight:300;font-size:64px;line-height:1.1;letter-spacing:-0.015em;margin-top:24px;">Real work, automated.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px 72px;margin-top:60px;">
+        <div style="border-top:1px solid rgba(255,255,255,0.16);padding-top:26px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.22em;color:var(--accent,#74d4cb);">DIGITAL MARKETING</div>
+          <div style="font-weight:300;font-size:32px;line-height:1.38;color:rgba(255,255,255,0.66);margin-top:16px;">A full SEM campaign &mdash; researched, written, structured and exported &mdash; from a one-line brief.</div>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,0.16);padding-top:26px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.22em;color:var(--accent,#74d4cb);">CONTENT</div>
+          <div style="font-weight:300;font-size:32px;line-height:1.38;color:rgba(255,255,255,0.66);margin-top:16px;">A month of posts drafted, adapted per channel and queued to publish.</div>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,0.16);padding-top:26px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.22em;color:var(--accent,#74d4cb);">SALES</div>
+          <div style="font-weight:300;font-size:32px;line-height:1.38;color:rgba(255,255,255,0.66);margin-top:16px;">Inbound leads qualified, enriched and followed up &mdash; around the clock.</div>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,0.16);padding-top:26px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.22em;color:var(--accent,#74d4cb);">FINANCE</div>
+          <div style="font-weight:300;font-size:32px;line-height:1.38;color:rgba(255,255,255,0.66);margin-top:16px;">Invoices read, matched to orders and reconciled. You only approve.</div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;left:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.28em;color:rgba(255,255,255,0.24);">IN PRACTICE</div>
+    <div style="position:absolute;right:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;color:rgba(255,255,255,0.24);">04 / 09</div>
+  </section>
+
+  <!-- 05 — TIME IS THE ROI -->
+  <section data-label="Time" data-screen-label="05" data-speaker-notes="El ROI real es tiempo. Los dias se vuelven minutos, con tareas cercanas a la audiencia." style="background:var(--bg,#08090B);color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;padding:128px 120px;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.34em;color:var(--accent,#74d4cb);text-transform:uppercase;">The real ROI is time</div>
+      <div style="font-weight:300;font-size:64px;line-height:1.08;letter-spacing:-0.015em;margin-top:26px;">Days collapse into minutes.</div>
+      <div style="display:flex;flex-direction:column;margin-top:56px;">
+        <div style="display:flex;align-items:baseline;gap:40px;border-top:1px solid rgba(255,255,255,0.1);padding:22px 0;">
+          <div style="width:560px;font-weight:300;font-size:34px;color:rgba(255,255,255,0.6);">SEM campaign setup</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:34px;color:rgba(255,255,255,0.3);text-decoration:line-through;">2 days</div>
+          <div style="font-size:32px;color:rgba(255,255,255,0.3);">&rarr;</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:500;color:var(--accent,#74d4cb);">4 minutes</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:40px;border-top:1px solid rgba(255,255,255,0.1);padding:22px 0;">
+          <div style="width:560px;font-weight:300;font-size:34px;color:rgba(255,255,255,0.6);">Lead qualification</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:34px;color:rgba(255,255,255,0.3);text-decoration:line-through;">48 hours</div>
+          <div style="font-size:32px;color:rgba(255,255,255,0.3);">&rarr;</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:500;color:var(--accent,#74d4cb);">2 minutes</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:40px;border-top:1px solid rgba(255,255,255,0.1);padding:22px 0;">
+          <div style="width:560px;font-weight:300;font-size:34px;color:rgba(255,255,255,0.6);">Content calendar</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:34px;color:rgba(255,255,255,0.3);text-decoration:line-through;">1 week</div>
+          <div style="font-size:32px;color:rgba(255,255,255,0.3);">&rarr;</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:500;color:var(--accent,#74d4cb);">10 minutes</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:40px;border-top:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);padding:22px 0;">
+          <div style="width:560px;font-weight:300;font-size:34px;color:rgba(255,255,255,0.6);">Invoice reconciliation</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:34px;color:rgba(255,255,255,0.3);text-decoration:line-through;">Hours</div>
+          <div style="font-size:32px;color:rgba(255,255,255,0.3);">&rarr;</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:500;color:var(--accent,#74d4cb);">Seconds</div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;left:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.28em;color:rgba(255,255,255,0.24);">IN PRACTICE</div>
+    <div style="position:absolute;right:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;color:rgba(255,255,255,0.24);">05 / 09</div>
+  </section>
+
+  <!-- 06 — MAZINGEROS -->
+  <section data-label="MazingerOS" data-screen-label="06" data-speaker-notes="Aqui empieza lo concreto. MazingerOS: una capa operativa supervisada para ejecutar. Del comando al resultado." style="background:var(--bg,#08090B);color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;padding:120px 120px;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.34em;color:var(--accent,#74d4cb);text-transform:uppercase;">How it works</div>
+      <div style="display:flex;align-items:baseline;gap:28px;margin-top:22px;flex-wrap:wrap;">
+        <div style="font-weight:300;font-size:68px;letter-spacing:-0.015em;">MazingerOS</div>
+        <div style="font-weight:300;font-size:30px;color:rgba(255,255,255,0.5);">From a command to delivered work &mdash; supervised, not a chatbot.</div>
+      </div>
+      <div style="display:flex;flex-direction:column;margin-top:44px;">
+        <div style="display:flex;align-items:baseline;gap:32px;border-top:1px solid rgba(255,255,255,0.09);padding:16px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:var(--accent,#74d4cb);width:56px;flex:none;">01</div>
+          <div style="font-weight:300;font-size:34px;width:520px;flex:none;">Command in</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.4);">WhatsApp &middot; natural language</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:32px;border-top:1px solid rgba(255,255,255,0.09);padding:16px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:var(--accent,#74d4cb);width:56px;flex:none;">02</div>
+          <div style="font-weight:300;font-size:34px;width:520px;flex:none;">Orchestrator</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.4);">decomposes the work</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:32px;border-top:1px solid rgba(255,255,255,0.09);padding:16px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:var(--accent,#74d4cb);width:56px;flex:none;">03</div>
+          <div style="font-weight:300;font-size:34px;width:520px;flex:none;">Model router</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.4);">picks the right model</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:32px;border-top:1px solid rgba(255,255,255,0.09);padding:16px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:var(--accent,#74d4cb);width:56px;flex:none;">04</div>
+          <div style="font-weight:300;font-size:34px;width:520px;flex:none;">Agents</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.4);">execute task by task</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:32px;border-top:1px solid rgba(255,255,255,0.09);padding:16px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:var(--accent,#74d4cb);width:56px;flex:none;">05</div>
+          <div style="font-weight:300;font-size:34px;width:520px;flex:none;">Tools &amp; systems</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.4);">real actions, with context</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:32px;border-top:1px solid rgba(255,255,255,0.09);padding:16px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:var(--accent,#74d4cb);width:56px;flex:none;">06</div>
+          <div style="font-weight:300;font-size:34px;width:520px;flex:none;">Human approval</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.4);">supervised gate</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:32px;border-top:1px solid rgba(255,255,255,0.09);border-bottom:1px solid rgba(255,255,255,0.09);padding:16px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:var(--accent,#74d4cb);width:56px;flex:none;">07</div>
+          <div style="font-weight:300;font-size:34px;width:520px;flex:none;">Output</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.4);">delivered work</div>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;left:120px;bottom:50px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.28em;color:rgba(255,255,255,0.24);">HOW IT WORKS</div>
+    <div style="position:absolute;right:120px;bottom:50px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;color:rgba(255,255,255,0.24);">06 / 09</div>
+  </section>
+
+  <!-- 07 — DEMO INTRO -->
+  <section data-label="Demo" data-screen-label="07" data-speaker-notes="De la vision a la prueba. Una campana de Google Ads real, sobre una web sin preparar, montada en directo." style="background:var(--bg,#08090B);color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;padding:128px 120px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.4em;color:var(--accent,#74d4cb);text-transform:uppercase;">Live demo</div>
+      <div style="font-weight:300;font-size:92px;line-height:1.06;letter-spacing:-0.02em;margin-top:40px;">SEM with agents,<br>live.</div>
+      <div style="font-weight:300;font-size:36px;color:rgba(255,255,255,0.5);margin-top:40px;max-width:1200px;line-height:1.4;">A real Google Ads campaign, on an unprepared website, built by an agent while the audience watches.</div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:52px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.14);border-radius:4px;padding:12px 22px;display:flex;align-items:center;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent,#74d4cb);"></span>real website</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.14);border-radius:4px;padding:12px 22px;display:flex;align-items:center;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent,#74d4cb);"></span>no prep</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.14);border-radius:4px;padding:12px 22px;display:flex;align-items:center;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:var(--accent,#74d4cb);"></span>one command</span>
+      </div>
+    </div>
+    <div style="position:absolute;left:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.28em;color:rgba(255,255,255,0.24);">LIVE DEMO</div>
+    <div style="position:absolute;right:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;color:rgba(255,255,255,0.24);">07 / 09</div>
+  </section>
+
+  <!-- 08 — DEMO STEPS -->
+  <section data-label="Pasos" data-screen-label="08" data-speaker-notes="El agente recorre cinco pasos en segundos: lee la web, investiga, escribe, estructura y exporta el CSV." style="background:var(--bg,#08090B);color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;padding:128px 120px;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.34em;color:var(--accent,#74d4cb);text-transform:uppercase;">The agent, step by step</div>
+      <div style="font-weight:300;font-size:64px;letter-spacing:-0.015em;margin-top:22px;">Five steps, in seconds.</div>
+      <div style="display:flex;flex-direction:column;margin-top:52px;">
+        <div style="display:flex;align-items:baseline;gap:36px;border-top:1px solid rgba(255,255,255,0.1);padding:22px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:var(--accent,#74d4cb);width:64px;flex:none;">01</div>
+          <div style="font-weight:300;font-size:40px;width:620px;flex:none;">Reads the website</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">what it sells and to whom</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:36px;border-top:1px solid rgba(255,255,255,0.1);padding:22px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:var(--accent,#74d4cb);width:64px;flex:none;">02</div>
+          <div style="font-weight:300;font-size:40px;width:620px;flex:none;">Researches keywords and competitors</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">intent and competitors</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:36px;border-top:1px solid rgba(255,255,255,0.1);padding:22px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:var(--accent,#74d4cb);width:64px;flex:none;">03</div>
+          <div style="font-weight:300;font-size:40px;width:620px;flex:none;">Writes the ads</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">headlines and descriptions</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:36px;border-top:1px solid rgba(255,255,255,0.1);padding:22px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:var(--accent,#74d4cb);width:64px;flex:none;">04</div>
+          <div style="font-weight:300;font-size:40px;width:620px;flex:none;">Structures the campaign</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">groups, match types, negatives</div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:36px;border-top:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1);padding:22px 0;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:30px;color:var(--accent,#74d4cb);width:64px;flex:none;">05</div>
+          <div style="font-weight:300;font-size:40px;width:620px;flex:none;">Exports the CSV</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);">ready for Google Ads Editor</div>
+        </div>
+      </div>
+    </div>
+    <a href="guia-sem-como-se-hace.html" target="_blank" rel="noopener" style="position:absolute;right:120px;bottom:50px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.14em;color:rgba(255,255,255,0.34);text-decoration:none;display:flex;align-items:center;gap:12px;">VIEW GUIDE &middot; HOW IT&rsquo;S DONE <span style="color:var(--accent,#74d4cb);">&rarr;</span></a>
+    <div style="position:absolute;left:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.28em;color:rgba(255,255,255,0.24);">LIVE DEMO</div>
+  </section>
+
+  <!-- 09 — DEMO OUTCOME -->
+  <section data-label="Outcome" data-screen-label="09" data-speaker-notes="El resultado: lo que tomaria unas 18 horas hombre sucede en unos 3,4 minutos. Unas 320 veces mas rapido. El ROI se mide en tiempo." style="background:var(--bg,#08090B);color:#F4F6F8;font-family:'Space Grotesk',sans-serif;overflow:hidden;">
+    <div style="position:absolute;inset:0;padding:128px 120px;display:flex;flex-direction:column;justify-content:center;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.34em;color:var(--accent,#74d4cb);text-transform:uppercase;">Outcome &middot; the ROI is time</div>
+      <div style="display:flex;align-items:flex-end;gap:60px;flex-wrap:wrap;margin-top:48px;">
+        <div>
+          <div style="font-weight:300;font-size:88px;color:rgba(255,255,255,0.32);line-height:1;">&asymp; 18 h</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:26px;color:rgba(255,255,255,0.4);margin-top:14px;">man-hours &middot; ~3 days</div>
+        </div>
+        <div style="font-size:64px;color:rgba(255,255,255,0.3);padding-bottom:22px;">&rarr;</div>
+        <div style="display:flex;align-items:flex-end;gap:16px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-weight:500;font-variant-numeric:tabular-nums;font-size:210px;line-height:0.82;color:var(--accent,#74d4cb);letter-spacing:-0.01em;" id="demo-bignum">320</span>
+          <span style="font-size:88px;color:var(--accent,#74d4cb);padding-bottom:16px;">&times;</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(255,255,255,0.4);padding-bottom:28px;">faster</span>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:40px;">
+        <div style="display:flex;align-items:baseline;gap:16px;border:1px solid rgba(122,212,203,0.32);border-radius:8px;padding:12px 24px;background:rgba(122,212,203,0.05);">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.3em;color:var(--accent,#74d4cb);">CRONO</span>
+          <span id="demo-stopwatch" style="font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums;font-size:46px;font-weight:500;color:#F4F6F8;">00:00.0</span>
+        </div>
+        <button id="demo-start" type="button" style="font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--accent,#74d4cb);background:rgba(122,212,203,0.08);border:1px solid rgba(122,212,203,0.5);border-radius:7px;padding:13px 24px;cursor:pointer;transition:background-color 160ms ease;">&#9654; Start</button>
+        <button id="demo-stop" type="button" style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.7);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.16);border-radius:7px;padding:13px 24px;cursor:pointer;transition:background-color 160ms ease;">&#9632; Stop</button>
+        <button id="demo-reset" type="button" style="font-family:'JetBrains Mono',monospace;font-size:24px;color:rgba(255,255,255,0.45);background:transparent;border:1px solid rgba(255,255,255,0.12);border-radius:7px;padding:13px 22px;cursor:pointer;transition:border-color 160ms ease;">&#8635; Reset</button>
+      </div>
+      <div style="font-weight:300;font-size:50px;letter-spacing:-0.01em;margin-top:40px;">ROI isn&rsquo;t measured in money. <span style="color:var(--accent,#74d4cb);">It&rsquo;s measured in time.</span></div>
+    </div>
+    <div style="position:absolute;left:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.28em;color:rgba(255,255,255,0.24);">LIVE DEMO</div>
+    <div style="position:absolute;right:120px;bottom:54px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.18em;color:rgba(255,255,255,0.24);">09 / 09</div>
+  </section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: &quot;100%&quot; },
+  &quot;accent&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Soft Cyan&quot;, &quot;Emerald&quot;, &quot;Electric Blue&quot;], &quot;default&quot;: &quot;Soft Cyan&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Theme&quot; },
+  &quot;background&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Near Black&quot;, &quot;True Black&quot;, &quot;Charcoal&quot;], &quot;default&quot;: &quot;Near Black&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Theme&quot; }
+}">
+class Component extends DCLogic {
+  componentDidMount(){
+    this.applyTheme();
+    this.initStopwatch();
+  }
+  componentDidUpdate(){ this.applyTheme(); }
+  applyTheme(){
+    const accents = {'Soft Cyan':'#74d4cb','Emerald':'#60c496','Electric Blue':'#6ea0cd'};
+    const bgs = {'Near Black':'#08090B','True Black':'#000000','Charcoal':'#111317'};
+    const a = accents[this.props.accent] || '#74d4cb';
+    const b = bgs[this.props.background] || '#08090B';
+    const root = document.documentElement;
+    root.style.setProperty('--accent', a);
+    root.style.setProperty('--bg', b);
+  }
+  initStopwatch(){
+    if(this._swInit) return; this._swInit = true;
+    const $ = id => document.getElementById(id);
+    const sw = $('demo-stopwatch');
+    const big = $('demo-bignum');
+    const BASE = 18 * 3600; // 18 man-hours in seconds
+    let t0=null, raf=null, acc=0;
+    const fmt = ms => {
+      const cs = Math.floor(ms/100)%10;
+      const s = Math.floor(ms/1000)%60;
+      const m = Math.floor(ms/60000);
+      return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+'.'+cs;
+    };
+    const render = ms => { if(sw) sw.textContent = fmt(ms); if(big){ const sec = ms/1000; big.textContent = sec >= 0.5 ? String(Math.round(BASE/sec)) : '320'; } };
+    const tick = () => { render(acc + (performance.now()-t0)); raf = requestAnimationFrame(tick); };
+    const start = () => { if(t0!==null) return; t0 = performance.now(); tick(); };
+    const stop = () => { if(t0===null) return; acc += performance.now()-t0; t0=null; cancelAnimationFrame(raf); render(acc); };
+    const reset = () => { t0=null; acc=0; cancelAnimationFrame(raf); render(0); };
+    const b1=$('demo-start'), b2=$('demo-stop'), b3=$('demo-reset');
+    if(b1) b1.addEventListener('click', start);
+    if(b2) b2.addEventListener('click', stop);
+    if(b3) b3.addEventListener('click', reset);
+  }
+}
+</script>
+</body>
+</html>
