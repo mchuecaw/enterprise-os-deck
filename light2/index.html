@@ -293,8 +293,6 @@ class Component extends DCLogic {
   initStopwatch(){
     if(this._swInit) return; this._swInit = true;
     const $ = id => document.getElementById(id);
-    const sw = $('demo-stopwatch');
-    const big = $('demo-bignum');
     const BASE = 18 * 3600; // 18 man-hours in seconds
     let t0=null, raf=null, acc=0;
     const fmt = ms => {
@@ -303,15 +301,25 @@ class Component extends DCLogic {
       const m = Math.floor(ms/60000);
       return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+'.'+cs;
     };
-    const render = ms => { if(sw) sw.textContent = fmt(ms); if(big){ const sec = ms/1000; big.textContent = sec >= 0.5 ? String(Math.round(BASE/sec)) : '320'; } };
+    const render = ms => {
+      const sw = $('demo-stopwatch'), big = $('demo-bignum');
+      if(sw) sw.textContent = fmt(ms);
+      if(big){ const sec = ms/1000; big.textContent = sec >= 0.5 ? String(Math.round(BASE/sec)) : '320'; }
+    };
     const tick = () => { render(acc + (performance.now()-t0)); raf = requestAnimationFrame(tick); };
     const start = () => { if(t0!==null) return; t0 = performance.now(); tick(); };
     const stop = () => { if(t0===null) return; acc += performance.now()-t0; t0=null; cancelAnimationFrame(raf); render(acc); };
     const reset = () => { t0=null; acc=0; cancelAnimationFrame(raf); render(0); };
-    const b1=$('demo-start'), b2=$('demo-stop'), b3=$('demo-reset');
-    if(b1) b1.addEventListener('click', start);
-    if(b2) b2.addEventListener('click', stop);
-    if(b3) b3.addEventListener('click', reset);
+    // deck-stage.js loads after mount, so the buttons don't exist yet here
+    // (and re-renders can swap the nodes). Delegate from document, which is
+    // always present, instead of binding nodes captured at mount time.
+    document.addEventListener('click', (e) => {
+      const t = e.target && e.target.closest && e.target.closest('#demo-start,#demo-stop,#demo-reset');
+      if(!t) return;
+      if(t.id === 'demo-start') start();
+      else if(t.id === 'demo-stop') stop();
+      else reset();
+    });
   }
 }
 </script>
