@@ -90,10 +90,10 @@
       <div style="font-weight:300;font-size:64px;line-height:1.08;letter-spacing:-0.015em;margin-top:26px;">Days collapse into minutes.</div>
       <div style="display:flex;flex-direction:column;margin-top:56px;">
         <div style="display:flex;align-items:baseline;gap:40px;border-top:1px solid rgba(255,255,255,0.1);padding:22px 0;">
-          <div style="width:560px;font-weight:300;font-size:34px;color:rgba(255,255,255,0.6);">SEM campaign setup</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:34px;color:rgba(255,255,255,0.3);text-decoration:line-through;">2 days</div>
+          <div style="width:560px;font-weight:300;font-size:34px;color:rgba(255,255,255,0.6);">SEM campaign setup, benchmark &amp; performance report</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:34px;color:rgba(255,255,255,0.3);text-decoration:line-through;">1 week</div>
           <div style="font-size:32px;color:rgba(255,255,255,0.3);">→</div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:500;color:var(--accent,#74d4cb);">4 minutes</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:42px;font-weight:500;color:var(--accent,#74d4cb);">&lt;&lt; 4 minutes</div>
         </div>
         <div style="display:flex;align-items:baseline;gap:40px;border-top:1px solid rgba(255,255,255,0.1);padding:22px 0;">
           <div style="width:560px;font-weight:300;font-size:34px;color:rgba(255,255,255,0.6);">Lead qualification</div>
@@ -238,7 +238,7 @@
         </div>
         <div style="font-size:64px;color:rgba(255,255,255,0.3);padding-bottom:22px;">→</div>
         <div style="display:flex;align-items:flex-end;gap:16px;">
-          <span style="font-family:'JetBrains Mono',monospace;font-weight:500;font-variant-numeric:tabular-nums;font-size:210px;line-height:0.82;color:var(--accent,#74d4cb);letter-spacing:-0.01em;">620</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-weight:500;font-variant-numeric:tabular-nums;font-size:210px;line-height:0.82;color:var(--accent,#74d4cb);letter-spacing:-0.01em;" id="demo-bignum">620</span>
           <span style="font-size:88px;color:var(--accent,#74d4cb);padding-bottom:16px;">×</span>
           <span style="font-family:'JetBrains Mono',monospace;font-size:30px;color:rgba(255,255,255,0.4);padding-bottom:28px;">faster</span>
         </div>
@@ -283,7 +283,7 @@ class Component extends DCLogic {
   initStopwatch(){
     if(this._swInit) return; this._swInit = true;
     const $ = id => document.getElementById(id);
-    const sw = $('demo-stopwatch');
+    const BASE = 35 * 3600; // 35 man-hours in seconds
     let t0=null, raf=null, acc=0;
     const fmt = ms => {
       const cs = Math.floor(ms/100)%10;
@@ -291,15 +291,25 @@ class Component extends DCLogic {
       const m = Math.floor(ms/60000);
       return String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')+'.'+cs;
     };
-    const render = ms => { if(sw) sw.textContent = fmt(ms); };
+    const render = ms => {
+      const sw = $('demo-stopwatch'), big = $('demo-bignum');
+      if(sw) sw.textContent = fmt(ms);
+      if(big){ const sec = ms/1000; big.textContent = sec >= 0.5 ? String(Math.round(BASE/sec)) : '620'; }
+    };
     const tick = () => { render(acc + (performance.now()-t0)); raf = requestAnimationFrame(tick); };
     const start = () => { if(t0!==null) return; t0 = performance.now(); tick(); };
     const stop = () => { if(t0===null) return; acc += performance.now()-t0; t0=null; cancelAnimationFrame(raf); render(acc); };
     const reset = () => { t0=null; acc=0; cancelAnimationFrame(raf); render(0); };
-    const b1=$('demo-start'), b2=$('demo-stop'), b3=$('demo-reset');
-    if(b1) b1.addEventListener('click', start);
-    if(b2) b2.addEventListener('click', stop);
-    if(b3) b3.addEventListener('click', reset);
+    // deck-stage.js loads after mount, so the buttons don't exist yet here
+    // (and re-renders can swap the nodes). Delegate from document, which is
+    // always present, instead of binding nodes captured at mount time.
+    document.addEventListener('click', (e) => {
+      const t = e.target && e.target.closest && e.target.closest('#demo-start,#demo-stop,#demo-reset');
+      if(!t) return;
+      if(t.id === 'demo-start') start();
+      else if(t.id === 'demo-stop') stop();
+      else reset();
+    });
   }
 }
 </script>
