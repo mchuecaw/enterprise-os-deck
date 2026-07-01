@@ -87,15 +87,15 @@ a{color:var(--accent)}
 
   <span class="eyebrow">cómo se hace</span>
   <h1>SEM con un agente, paso a paso.</h1>
-  <p class="lead">El guion de la demo, reproducible en cualquier empresa. Un agente lee tu web, investiga, escribe los anuncios, estructura la campaña y exporta un CSV listo para subir. Lo que un equipo tarda días, en minutos.</p>
+  <p class="lead">El guion de la demo, reproducible en cualquier empresa. Un agente lee tu web, investiga, escribe los anuncios, estructura la campaña, la <b>sube a Google Ads por API —en pausa—</b> y te entrega el estudio de keywords. Lo que un equipo tarda días, en minutos.</p>
 
   <div class="block">
     <div class="block__label">Lo que necesitas</div>
-    <p>Un asistente con acceso a web y búsqueda, la URL de tu web y —opcional, para el remate— Google Ads Editor y una cuenta de Google Ads. <b>El CSV se importa y queda en borrador: en la demo no se publica ni se gasta nada.</b></p>
+    <p>Un asistente con acceso a web y búsqueda, la URL de tu web y una cuenta de Google Ads con acceso API (developer token). <b>La campaña se sube de verdad por API, pero queda en PAUSED: no se publica ningún anuncio ni se gasta un euro hasta que una persona la enciende.</b></p>
   </div>
 
   <div class="block">
-    <div class="block__label">Los 5 pasos</div>
+    <div class="block__label">Los 6 pasos</div>
 
     <div class="step">
       <div class="step__n">01</div>
@@ -126,23 +126,14 @@ competidores: qué intención atacan y qué mensajes usan.</pre>
     <div class="step">
       <div class="step__n">03</div>
       <div>
-        <div class="step__t">Construye la campaña</div>
-        <div class="step__d">El momento clave: estructura, keywords, anuncios y negativas.</div>
+        <div class="step__t">Escribe los anuncios</div>
+        <div class="step__d">Titulares y descripciones que respetan los límites de Google.</div>
         <div class="prompt">
           <div class="prompt__bar"><span class="prompt__tag">prompt</span><button class="prompt__copy" data-copy>copiar</button></div>
-          <pre>Monta una campaña de Search en Google Ads para <span class="ph">[tu-web]</span>.
-Mercado e idioma: <span class="ph">[tu país]</span> / <span class="ph">[tu idioma]</span>. Quiero:
-- 6-8 grupos de anuncios single-theme, con su intención.
-- Keywords en concordancia de frase y exacta (nada de broad).
-- Por grupo, 1 anuncio responsive (RSA) con 12-15 titulares
-  (max 30 caracteres) y 4 descripciones (max 90), con la
-  keyword en al menos 3 titulares, beneficio y llamada a la
-  acción.
-- 15-20 palabras clave negativas.
-- 4 sitelinks, 4 callouts y 1 fragmento estructurado.
-- Estrategia de puja y presupuesto/día para arrancar.
-Devuélvemelo en tabla y prepárame un CSV compatible con
-Google Ads Editor.</pre>
+          <pre>Redacta, por grupo, 1 anuncio responsive (RSA): 12-15
+titulares (máx 30 caracteres) y 4 descripciones (máx 90),
+con la keyword del grupo en al menos 3 titulares, más
+beneficio y llamada a la acción.</pre>
         </div>
       </div>
     </div>
@@ -150,12 +141,19 @@ Google Ads Editor.</pre>
     <div class="step">
       <div class="step__n">04</div>
       <div>
-        <div class="step__t">Exporta el CSV</div>
-        <div class="step__d">Listo para importar en Google Ads Editor.</div>
+        <div class="step__t">Estructura la campaña y exporta el CSV</div>
+        <div class="step__d">Grupos, concordancias, negativas y extensiones → CSV listo para subir.</div>
         <div class="prompt">
           <div class="prompt__bar"><span class="prompt__tag">prompt</span><button class="prompt__copy" data-copy>copiar</button></div>
-          <pre>Genera el CSV de Google Ads Editor (Campaign, Ad Group,
-Keyword, Match Type, etc.) y dámelo para descargar.</pre>
+          <pre>Estructura la campaña de Search para <span class="ph">[tu-web]</span> en
+<span class="ph">[tu país]</span> / <span class="ph">[tu idioma]</span>. Quiero:
+- 6-8 grupos de anuncios single-theme, con su intención.
+- Keywords en concordancia de frase y exacta (nada de broad).
+- 15-20 palabras clave negativas.
+- 4 sitelinks, 4 callouts y 1 fragmento estructurado.
+- Estrategia de puja y presupuesto/día para arrancar.
+Devuélvemelo en tabla y exporta un CSV compatible con
+Google Ads Editor para descargar.</pre>
         </div>
       </div>
     </div>
@@ -163,12 +161,30 @@ Keyword, Match Type, etc.) y dámelo para descargar.</pre>
     <div class="step">
       <div class="step__n">05</div>
       <div>
-        <div class="step__t">Optimiza la landing</div>
-        <div class="step__d">El agente te dice cómo pagar menos por clic.</div>
+        <div class="step__t">Carga la campaña en Google Ads (vía API)</div>
+        <div class="step__d">Subida real por API en estado PAUSED. Escritura atómica, sin gasto.</div>
         <div class="prompt">
           <div class="prompt__bar"><span class="prompt__tag">prompt</span><button class="prompt__copy" data-copy>copiar</button></div>
-          <pre>Audita <span class="ph">[tu-web]</span> como landing para estas keywords:
-los 5 cambios que más suben el Quality Score y bajan el CPC.</pre>
+          <pre>Sube el CSV a Google Ads por API en estado PAUSED (sin
+gastar): cuenta <span class="ph">[id de cuenta]</span>, puja CPC manual,
+<span class="ph">[presupuesto]</span>/día. Valida política y URLs antes de
+escribir y hazlo en una sola llamada atómica. NO la
+actives: la enciendo yo tras revisar.</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step__n">06</div>
+      <div>
+        <div class="step__t">Informe web del estudio de keywords</div>
+        <div class="step__d">El entregable visual: volumen, CPC y competencia por grupo, con tu marca.</div>
+        <div class="prompt">
+          <div class="prompt__bar"><span class="prompt__tag">prompt</span><button class="prompt__copy" data-copy>copiar</button></div>
+          <pre>Genera el estudio de keywords en una web con mi marca:
+agrupa por grupo de anuncios y añade volumen, CPC y
+competencia del Keyword Planner (solo lectura), más una
+proyección de clics, coste y leads. Ábrelo en el navegador.</pre>
         </div>
       </div>
     </div>
@@ -176,20 +192,21 @@ los 5 cambios que más suben el Quality Score y bajan el CPC.</pre>
 
   <div class="block">
     <div class="block__label">El agente construye, el humano enciende</div>
-    <p>En la demo no se pulsa publicar ni se gasta dinero: el CSV se importa y queda en borrador. <b>El agente construye y optimiza; la persona aprueba y decide qué encender.</b></p>
+    <p>La subida es real y atómica, pero <b>siempre en PAUSED</b>: no se publica ningún anuncio ni se gasta dinero. El agente construye, sube y documenta; <b>la persona revisa y decide qué encender.</b></p>
   </div>
 
   <div class="block">
-    <div class="block__label">De 5 prompts a 1 comando</div>
-    <p>El verdadero atajo es encapsular este guion como una skill reutilizable: así pasa de cinco prompts a un solo comando —<b>"monta SEM para esta web"</b>— que cualquiera en el equipo puede invocar.</p>
+    <div class="block__label">De 6 prompts a 2 comandos</div>
+    <p>El verdadero atajo es encapsular este guion como skills reutilizables: así pasa de seis prompts a un par de comandos —<b>«monta SEM para esta web»</b> y <b>«súbela a Google Ads en pausa»</b>— que cualquiera en el equipo puede invocar.</p>
   </div>
 
   <div class="fine">
     <div class="block__label">Letra pequeña honesta</div>
     <ul>
       <li><span><b>Skills</b> = el asistente + su mecanismo de skills. No hay un botón "SEM" de fábrica: el playbook lo encapsulas tú.</span></li>
-      <li><span>Valida las cabeceras del CSV contra tu versión de Google Ads Editor (cambian entre versiones). Importa primero en una cuenta de pruebas.</span></li>
-      <li><span>Los volúmenes y el CPC reales los da el Keyword Planner con tu cuenta. El agente estima; tú refinas las pujas.</span></li>
+      <li><span>La subida por API es real, pero nace en <b>PAUSED</b>. Activar gasto es una decisión humana; configura la conversión (envío de formulario) antes de encender.</span></li>
+      <li><span>El <b>Final URL debe coincidir con el dominio de aterrizaje</b>: si tu web redirige a otro dominio, apunta al destino final o Google rechaza el anuncio (DESTINATION_MISMATCH).</span></li>
+      <li><span>Los volúmenes y el CPC reales los da el Keyword Planner con tu cuenta (estimaciones de Google). Clics, coste y leads del informe son proyección propia, no rendimiento servido.</span></li>
       <li><span>Es un acelerador de construcción, no asesoramiento de inversión. El criterio de cuánto y cuándo gastar es humano.</span></li>
     </ul>
   </div>
